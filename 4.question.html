@@ -1,0 +1,44 @@
+<!-- /*
+Question 4
+    Assume we have a form e.g
+    <form>
+    <input type=”text” name=”firstname” />
+    <input type=”check” name=”checkme” />
+    <input type=”submit” value=”submit”
+    </form>
+    For the above form, write validation in javascript so that if the firstname is empty or
+     if checkme is not checked, it will not allow the form to submit.
+*/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function validateform() {
+            var x = document.forms["myform"]["firstname"].value;
+            if (x == "") {
+                alert("fill the required feild")
+                return false;
+            }
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htmlForm</title>
+</head>
+
+<body>
+    <form name="myform" onsubmit="return validateform()">
+        <label>First Name</label>
+        <input type="text" name="firstname" class="req"><br>
+        <label>Male</label>
+        <input type="checkbox" name="checkme" class="req" />
+        <label>Female</label>
+        <input type="checkbox" name="checkme" /><br>
+        <input type="submit" value="submit" />
+    </form>
+</body>
+
+</html>
